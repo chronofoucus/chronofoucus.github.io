@@ -1,0 +1,117 @@
+/* ================================
+   ChronoFocus Main Script File
+   Handles Reward System & Base Logic
+================================ */
+
+
+/* ===== INITIALIZE REWARD POINTS ===== */
+
+if (localStorage.getItem("rewardPoints") === null) {
+    localStorage.setItem("rewardPoints", "0");
+}
+
+
+/* ===== GET CURRENT REWARD POINTS ===== */
+
+function getRewardPoints() {
+    return parseInt(localStorage.getItem("rewardPoints")) || 0;
+}
+
+
+/* ===== ADD REWARD POINTS ===== */
+
+function addRewardPoints(points) {
+
+    let currentPoints = getRewardPoints();
+
+    currentPoints += points;
+
+    localStorage.setItem("rewardPoints", currentPoints);
+
+    console.log(points + " points added. Total: " + currentPoints);
+}
+
+
+/* ===== REMOVE REWARD POINTS ===== */
+
+function removeRewardPoints(points) {
+
+    let currentPoints = getRewardPoints();
+
+    currentPoints -= points;
+
+    if (currentPoints < 0) {
+        currentPoints = 0;
+    }
+
+    localStorage.setItem("rewardPoints", currentPoints);
+
+}
+
+
+/* ===== RESET REWARD POINTS ===== */
+
+function resetRewardPoints() {
+
+    localStorage.setItem("rewardPoints", "0");
+
+    alert("Reward points reset!");
+
+}
+
+
+/* ===== GET USER LEVEL ===== */
+
+function getUserLevel() {
+
+    let points = getRewardPoints();
+
+    if (points >= 500) {
+        return "Time Warrior 🏆";
+    }
+    else if (points >= 250) {
+        return "Discipline Master 🔥";
+    }
+    else if (points >= 100) {
+        return "Focused 📚";
+    }
+    else {
+        return "Beginner 🌱";
+    }
+
+}
+
+
+/* ===== PAGE LOAD ANIMATION ===== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+        document.body.style.opacity = "1";
+        document.body.style.transition = "opacity 0.5s ease";
+    }, 100);
+
+});
+
+
+/* ===== OPTIONAL CLICK SOUND (future use) ===== */
+
+function buttonClickEffect() {
+
+    console.log("Button clicked");
+
+}
+
+
+/* ===== EXPORT FUNCTIONS FOR OTHER FILES ===== */
+/*
+These functions will be used in:
+
+todo.js → addRewardPoints(10)
+goals.js → addRewardPoints(15)
+timer.js → addRewardPoints(25)
+reward.js → getRewardPoints(), getUserLevel()
+
+*/
