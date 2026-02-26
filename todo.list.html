@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoFocus – To-Do List</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">ChronoFocus</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="reward.html">Rewards</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Main Section -->
+    <section class="hero">
+
+        <h1 class="title">📝 To-Do List</h1>
+
+        <p class="description">
+            Add your daily tasks and complete them to earn reward points.
+        </p>
+
+        <!-- Input Area -->
+        <div class="button-container">
+
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Enter a new task..."
+                style="
+                    padding:12px;
+                    border-radius:20px;
+                    border:none;
+                    width:250px;
+                    outline:none;
+                "
+            >
+
+            <button class="main-btn" onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Task List -->
+    <section class="features">
+
+        <div class="feature-box" style="grid-column: 1/-1;">
+
+            <h3>Your Tasks</h3>
+
+            <ul id="taskList" style="list-style:none; margin-top:15px;">
+                <!-- Tasks will appear here -->
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 ChronoFocus – Master Your Time</p>
+        <p>Owner: Shalini Navariya</p>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="todo.js"></script>
+
+</body>
+</html>
