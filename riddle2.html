@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddle 2</title>
+
+<style>
+body{background:#0f0f0f;color:white;font-family:Arial;text-align:center;padding:40px;}
+.container{background:#1a1a2e;padding:25px;border-radius:10px;max-width:500px;margin:auto;}
+input,button{padding:10px;margin-top:15px;width:80%;font-size:16px;}
+button{background:#6a00ff;color:white;border:none;}
+</style>
+
+<script>
+function checkAnswer(){
+let answer=document.getElementById("answer").value.toLowerCase();
+
+if(answer==="shadow"){
+window.location.href="riddle3.html";
+}else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+<h2>Riddle 2</h2>
+
+<p>I follow you everywhere but disappear in darkness. What am I?</p>
+
+<input id="answer">
+
+<br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+</div>
+
+</body>
+</html>
