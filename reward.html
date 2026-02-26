@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronoFocus – Rewards</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="logo">ChronoFocus</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="todo.html">To-Do</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="timer.html">Timer</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Reward Section -->
+    <section class="hero">
+
+        <h1 class="title">🏆 Your Rewards</h1>
+
+        <p class="description">
+            Track your progress and level up your discipline.
+        </p>
+
+        <!-- Points Display -->
+        <div style="margin-top:30px;">
+
+            <h2 id="pointsDisplay" style="
+                font-size:40px;
+                color:#bb86fc;
+                margin-bottom:15px;
+            ">
+                0 Points
+            </h2>
+
+            <h3 id="levelDisplay" style="margin-bottom:30px;">
+                Beginner 🌱
+            </h3>
+
+        </div>
+
+
+        <!-- Progress Bar -->
+        <div style="
+            width:80%;
+            max-width:500px;
+            background-color:#222;
+            border-radius:20px;
+            margin:auto;
+            overflow:hidden;
+            box-shadow:0 0 10px rgba(187,134,252,0.4);
+        ">
+
+            <div id="progressBar" style="
+                height:20px;
+                width:0%;
+                background:linear-gradient(90deg,#7b2ff7,#bb86fc);
+                transition:0.5s;
+            "></div>
+
+        </div>
+
+
+        <!-- Reset Button -->
+        <div class="button-container" style="margin-top:40px;">
+
+            <button class="main-btn" onclick="resetProgress()">
+                🔄 Reset Progress
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Levels Info -->
+    <section class="features">
+
+        <div class="feature-box">
+            <h3>Beginner 🌱</h3>
+            <p>0 - 99 Points</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Focused 📚</h3>
+            <p>100 - 249 Points</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Discipline Master 🔥</h3>
+            <p>250 - 499 Points</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>Time Warrior 🏆</h3>
+            <p>500+ Points</p>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>© 2026 ChronoFocus – Master Your Time</p>
+
+        <p>Owner: Shalini Navariya</p>
+
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="reward.js"></script>
+
+</body>
+</html>
