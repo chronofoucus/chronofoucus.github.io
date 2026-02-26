@@ -1,0 +1,85 @@
+/* ================================
+   ChronoFocus Study Timer Script
+================================ */
+
+let timeLeft = 25 * 60; // 25 minutes in seconds
+let timerInterval = null;
+let isRunning = false;
+
+
+/* ===== UPDATE DISPLAY ===== */
+
+function updateDisplay() {
+
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    document.getElementById("timerDisplay").textContent = minutes + ":" + seconds;
+
+}
+
+
+/* ===== START TIMER ===== */
+
+function startTimer() {
+
+    if (isRunning) return;
+
+    isRunning = true;
+
+    timerInterval = setInterval(function () {
+
+        if (timeLeft > 0) {
+
+            timeLeft--;
+            updateDisplay();
+
+        } else {
+
+            clearInterval(timerInterval);
+            isRunning = false;
+
+            // Play simple alert sound
+            alert("Session completed! +25 Reward Points ⏳💜");
+
+            // Add reward points
+            addRewardPoints(25);
+
+        }
+
+    }, 1000);
+
+}
+
+
+/* ===== PAUSE TIMER ===== */
+
+function pauseTimer() {
+
+    clearInterval(timerInterval);
+    isRunning = false;
+
+}
+
+
+/* ===== RESET TIMER ===== */
+
+function resetTimer() {
+
+    clearInterval(timerInterval);
+    isRunning = false;
+
+    timeLeft = 25 * 60;
+    updateDisplay();
+
+}
+
+
+/* ===== INITIALIZE DISPLAY ON LOAD ===== */
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateDisplay();
+});
