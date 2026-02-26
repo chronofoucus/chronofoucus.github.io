@@ -1,0 +1,58 @@
+/* ================================
+   ChronoFocus Motivation Quotes
+================================ */
+
+
+/* ===== QUOTES ARRAY ===== */
+
+const quotes = [
+
+    "Success doesn’t come from what you do occasionally, it comes from what you do consistently.",
+    "Discipline is choosing between what you want now and what you want most.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Dream big. Start small. Act now.",
+    "Don’t stop until you’re proud.",
+    "Focus on your goals. Don’t look in any direction but ahead.",
+    "Your only limit is your mind.",
+    "Small daily improvements are the key to long-term success.",
+    "Work hard in silence, let success make the noise.",
+    "The pain you feel today will be the strength you feel tomorrow.",
+    "Stay positive. Work hard. Make it happen.",
+    "Discipline equals freedom.",
+    "Do something today that your future self will thank you for.",
+    "Success is built on daily habits.",
+    "Consistency creates confidence.",
+    "Great things never come from comfort zones.",
+    "Your future is created by what you do today.",
+    "Be stronger than your excuses.",
+    "Focus. Study. Repeat.",
+    "You are capable of more than you know."
+
+];
+
+
+/* ===== GENERATE RANDOM QUOTE ===== */
+
+function generateQuote() {
+
+    let randomIndex = Math.floor(Math.random() * quotes.length);
+
+    let quoteBox = document.getElementById("quoteBox");
+
+    // Fade effect
+    quoteBox.style.opacity = "0";
+
+    setTimeout(() => {
+
+        quoteBox.textContent = quotes[randomIndex];
+        quoteBox.style.opacity = "1";
+        quoteBox.style.transition = "opacity 0.5s ease";
+
+    }, 200);
+
+    // Add small reward
+    addRewardPoints(5);
+
+    console.log("Motivation Boost! +5 Reward Points 💜");
+
+}
