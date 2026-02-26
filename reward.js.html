@@ -1,0 +1,82 @@
+/* ================================
+   ChronoFocus Reward Dashboard
+================================ */
+
+
+/* ===== LOAD REWARD DATA ON PAGE LOAD ===== */
+
+document.addEventListener("DOMContentLoaded", loadRewardData);
+
+
+function loadRewardData() {
+
+    updatePointsDisplay();
+    updateLevelDisplay();
+    updateProgressBar();
+
+}
+
+
+/* ===== UPDATE POINTS DISPLAY ===== */
+
+function updatePointsDisplay() {
+
+    let points = getRewardPoints();
+
+    document.getElementById("pointsDisplay").textContent =
+        points + " Points";
+
+}
+
+
+/* ===== UPDATE LEVEL DISPLAY ===== */
+
+function updateLevelDisplay() {
+
+    let level = getUserLevel();
+
+    document.getElementById("levelDisplay").textContent =
+        level;
+
+}
+
+
+/* ===== UPDATE PROGRESS BAR ===== */
+
+function updateProgressBar() {
+
+    let points = getRewardPoints();
+
+    let maxPoints = 500;
+
+    if (points > maxPoints) {
+        points = maxPoints;
+    }
+
+    let percentage = (points / maxPoints) * 100;
+
+    document.getElementById("progressBar").style.width =
+        percentage + "%";
+
+}
+
+
+/* ===== RESET PROGRESS ===== */
+
+function resetProgress() {
+
+    let confirmReset = confirm(
+        "Are you sure you want to reset your progress?"
+    );
+
+    if (confirmReset) {
+
+        resetRewardPoints();
+
+        updatePointsDisplay();
+        updateLevelDisplay();
+        updateProgressBar();
+
+    }
+
+}
