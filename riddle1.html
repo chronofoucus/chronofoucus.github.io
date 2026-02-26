@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddle 1</title>
+
+<style>
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:40px;
+}
+.container{
+background:#1a1a2e;
+padding:25px;
+border-radius:10px;
+max-width:500px;
+margin:auto;
+}
+input,button{
+padding:10px;
+margin-top:15px;
+width:80%;
+font-size:16px;
+}
+button{
+background:#6a00ff;
+color:white;
+border:none;
+cursor:pointer;
+}
+</style>
+
+<script>
+function checkAnswer(){
+let answer=document.getElementById("answer").value.toLowerCase();
+
+if(answer==="keyboard"){
+window.location.href="riddle2.html";
+}else{
+alert("Wrong answer! Try again.");
+}
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+<h2>Riddle 1</h2>
+
+<p>
+I have keys but no locks.  
+I have space but no room.  
+You can enter but can't go outside.  
+What am I?
+</p>
+
+<input type="text" id="answer">
+
+<br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+</div>
+
+</body>
+</html>
